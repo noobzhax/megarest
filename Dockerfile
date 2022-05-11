@@ -17,3 +17,7 @@ RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
     -o /usr/local/bin/megasdkrest && chmod +x /usr/local/bin/megasdkrest
 
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en"
+
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
